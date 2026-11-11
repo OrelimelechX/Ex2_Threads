@@ -1,10 +1,16 @@
 import java.util.ArrayList;
 
 /**
- * Searches for a subset whose sum equals the target using a worker thread.
- * Uses an {@code ArrayList<Integer>} for the numbers and a boolean array
- * to record which numbers belong to the solution.
- * Shared state is accessed through synchronized blocks.
+ * A {@link Runnable} task that recursively solves the Subset Sum problem:
+ * it checks whether some subset of the numbers in an {@code ArrayList<Integer>}
+ * adds up to the target value {@code b}.
+ * <p>
+ * Two threads share the work: the thread named {@code "thread1"} searches for
+ * solutions that include the last number, and the other thread searches for
+ * solutions without it. Access to the shared {@link SharedData} object is
+ * synchronized, so once one thread finds a solution the other one stops.
+ *
+ * @author Eyal Hirsch
  */
 public class ThreadCheckArray implements Runnable {
 

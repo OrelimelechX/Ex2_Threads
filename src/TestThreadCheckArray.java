@@ -1,16 +1,32 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Entry point for the multithreaded Subset Sum checker.
+ * <p>
+ * Reads a list of integers and a target value {@code b} from the user, stores the
+ * numbers in an {@code ArrayList<Integer>}, and starts two {@link ThreadCheckArray}
+ * threads that search for a subset whose sum equals {@code b}. If a solution is
+ * found, the program prints the indexes, the values and the solution vector.
+ *
+ * @author Eyal Hirsch
+ */
 public class TestThreadCheckArray {
+    /**
+     * Reads the input, runs the two search threads and prints the result.
+     *
+     * @param args command line arguments (not used)
+     */
     public static void main(String[] args) {
         try (Scanner input = new Scanner(System.in)) {
             Thread thread1, thread2;
             System.out.println("Enter array size");
             int num  = input.nextInt();
-            int[] array = new int[num];
+            ArrayList<Integer> array = new ArrayList<>(num);
             System.out.println("Enter numbers for array");
 
             for (int index = 0; index < num; index++)
-                array[index] = input.nextInt();
+                array.add(input.nextInt());
 
             System.out.println("Enter number");
             num = input.nextInt();
@@ -31,9 +47,9 @@ public class TestThreadCheckArray {
                 System.out.println("Sorry");
                 return;
             }
-            System.out.println("Solution for b : " + sd.getB() + ",n = " + sd.getArray().length);
+            System.out.println("Solution for b : " + sd.getB() + ",n = " + sd.getArray().size());
             System.out.print("I:    ");
-            for(int index = 0; index < sd.getArray().length ; index++)
+            for(int index = 0; index < sd.getArray().size(); index++)
                 System.out.print(index + "    ");
             System.out.println();
             System.out.print("A:    ");
