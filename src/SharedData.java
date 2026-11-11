@@ -1,4 +1,12 @@
 import java.util.ArrayList;
+/**
+ * Holds the input numbers, target sum, and shared search results.
+ * Input numbers are stored in an {@code ArrayList<Integer>}.
+ * The {@code boolean[]} solution array marks the selected elements.
+ * Worker threads coordinate access using synchronized blocks.
+ *
+ * @author Or Elimelech
+ */
 public class SharedData {
     private ArrayList<Integer> array;
     private boolean[] winArray;

@@ -43,11 +43,14 @@ Using `ArrayList<Integer>` changes how the numbers are stored and accessed; it d
 
 ## Current Refactoring Status
 
-Student A has refactored `SharedData.java` and `ThreadCheckArray.java`.
+The ArrayList<Integer> refactoring has been integrated into main.
+The merge conflict in ThreadCheckArray.java was resolved using IntelliJ IDEA's 3-Way Merge tool.
 
-The current version of `TestThreadCheckArray.java` still uses `int[]` and requires Student B's changes. Until these changes are integrated, the project contains incompatible types and is not ready for a full compilation and execution check.
+Both students compiled and ran the merged project with the required input:
+4 numbers — 1, 2, 3, 7 — and target 5.
+Both runs produced C: 0 1 1 0 and finished with exit code 0.
 
-After merging, the team must verify compilation, program output, and Javadoc generation. This status section should then be updated to reflect the actual results.
+HTML Javadoc was generated and inspected on Or Elimelech's machine.
 
 ## Javadoc Documentation
 
@@ -123,7 +126,7 @@ C:    0    1    1    0
 
 The selection vector identifies `2` and `3`, whose sum is `5`.
 
-This is the expected result for the required smoke test, not a record of a completed test. Both students must run and verify the merged project.
+This smoke test passed on both students' machines with the output shown above.
 
 ## Git Ignore Rules
 
